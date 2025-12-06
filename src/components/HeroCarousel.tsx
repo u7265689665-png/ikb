@@ -26,7 +26,7 @@ const slides: Slide[] = [
     {
         images: [enfant1, enfant2, enfant3],
         title: "Cours Enfants",
-        subtitle: "Faites découvrir à vos enfants les arts martiaux dès 5 ans et développez leur discipline, confiance et énergie"
+        subtitle: "Faites découvrir à vos enfants les arts martiaux dès 4 ans et développez leur discipline, confiance et énergie"
 
     },
     {
