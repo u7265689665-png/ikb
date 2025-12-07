@@ -13,7 +13,6 @@ const pricingPlans = [
     period: "/ an",
     features: [
       "2 cours par semaine",
-      "Kimono offert la 1ère année",
       "Licence fédérale incluse",
       "Passages de grade",
     ],
@@ -25,7 +24,7 @@ const pricingPlans = [
     price: "220",
     period: "/ an",
     features: [
-      "3 cours par semaine",
+      "2 cours par semaine",
       "Accès aux cours compétition",
       "Licence fédérale incluse",
       "Passages de grade",
