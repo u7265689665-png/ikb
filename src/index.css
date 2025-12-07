@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* IKB Karaté Bagnolet Design System - Red, Black, White theme */
-
 @layer base {
   :root {
     --background: 0 0% 100%;
