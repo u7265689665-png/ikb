@@ -15,6 +15,7 @@ import enfant3 from "@/assets/enfant-3.jpg";
 import team1 from "@/assets/team1.jpg";
 import team2 from "@/assets/team2.jpg";
 import team3 from "@/assets/team3.jpg";
+import ilyes from "@/assets/ilyes.jpg";
 
 interface Slide {
     images: string[];
@@ -32,7 +33,7 @@ const slides: Slide[] = [
     {
         images: [team1, team2, team3],
         title: "Entraînement Collectif",
-        subtitle: "Progressez ensemble dans plusieurs disciplines : Karaté Shotokan traditionnel, Karaté contact et Karaté mix, dans une ambiance conviviale"
+        subtitle: "Progressez ensemble dans plusieurs disciplines : Karaté Shotokan traditionnel, Karaté contact, Karaté mix et MMA, dans une ambiance conviviale"
 
     },
     {

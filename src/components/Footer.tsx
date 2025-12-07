@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail, PhoneIcon } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, PhoneIcon } from "lucide-react";
 import logoIkb from "@/assets/logo-ikb.jpg";
 
 const Footer = () => {
@@ -41,6 +41,13 @@ const Footer = () => {
               aria-label="Instagram"
             >
               <Instagram className="h-5 w-5 text-secondary-foreground group-hover:text-primary-foreground" />
+            </a>
+             <a
+              href="https://www.youtube.com/@i.k.binternationalkaratede6713"
+              className="w-10 h-10 bg-secondary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors group"
+              aria-label="Instagram"
+            >
+              <Youtube className="h-5 w-5 text-secondary-foreground group-hover:text-primary-foreground" />
             </a>
             <a
               href="mailto:ikb.karate.bagnolet@gmail.com"

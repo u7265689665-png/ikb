@@ -16,6 +16,7 @@ const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
     { id: "horaires", label: "Horaires" },
     { id: "apropos", label: "À propos" },
     { id: "competition", label: "Résultats et Champions" },
+    { id: "videos", label: "Vidéos" },
     { id: "tarifs", label: "Tarifs" },
     { id: "contact", label: "Contact" },
   ];

@@ -8,43 +8,31 @@ interface TarifsProps {
 const pricingPlans = [
   {
     name: "Enfants",
-    age: "5-12 ans",
-    price: "180",
+    age: "4-12 ans",
+    price: "350",
     period: "/ an",
     features: [
-      "2 cours par semaine",
+      "3 cours par semaine",
+      "Accès aux cours compétition",
       "Licence fédérale incluse",
       "Passages de grade",
+      "Stages inclus",
     ],
     popular: false,
   },
   {
     name: "Ados/Adultes",
     age: "13 ans et +",
-    price: "220",
+    price: "390",
     period: "/ an",
     features: [
-      "2 cours par semaine",
+      "3 cours par semaine",
       "Accès aux cours compétition",
       "Licence fédérale incluse",
       "Passages de grade",
       "Stages inclus",
     ],
     popular: true,
-  },
-  {
-    name: "Famille",
-    age: "2 personnes ou +",
-    price: "350",
-    period: "/ an",
-    features: [
-      "Accès pour 2 membres",
-      "Tous les cours inclus",
-      "Licence fédérale incluse",
-      "Passages de grade",
-      "Remise 3ème membre",
-    ],
-    popular: false,
   },
 ];
 
@@ -59,13 +47,12 @@ const TarifsSection = ({ onNavigate }: TarifsProps) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-hover animate-fade-in ${
-                plan.popular ? "ring-2 ring-primary shadow-hover scale-105" : "shadow-card"
-              }`}
+              className={`relative bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-hover animate-fade-in ${plan.popular ? "ring-2 ring-primary shadow-hover scale-105" : "shadow-card"
+                }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {plan.popular && (
@@ -102,8 +89,22 @@ const TarifsSection = ({ onNavigate }: TarifsProps) => {
           ))}
         </div>
 
+        {/* 🎁 Cours d'essai gratuit */}
+        <div className="mt-12 text-center">
+          <div className="inline-block bg-black text-white px-6 py-3 rounded-xl shadow-lg font-heading text-lg tracking-wide">
+            🎁 Cours d’essai gratuit – Venez découvrir le club !
+          </div>
+
+          <div className="mt-4">
+            <Button variant="hero"
+              className="bg-black text-white hover:bg-black/80" onClick={() => onNavigate("contact")}>
+              Réserver un cours d’essai
+            </Button>
+          </div>
+        </div>
+
         <p className="text-center text-muted-foreground mt-8 text-sm">
-          * Les tarifs peuvent être soumis à des aides CAF ou coupons sports. Nous consulter.
+          * Les tarifs peuvent être soumis à des aides CAF ou coupons sport. Possibilité de paiement en plusieurs fois. Nous consulter.
         </p>
       </div>
     </section>

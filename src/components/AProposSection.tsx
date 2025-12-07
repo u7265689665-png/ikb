@@ -1,5 +1,16 @@
 import { Award, Users, Target, Heart } from "lucide-react";
-import karatekaImage from "@/assets/coach1.jpg";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+
+import photo1 from "@/assets/coach1.jpg";
+import photo2 from "@/assets/coach2.jpg";
+import photo3 from "@/assets/coach3.jpg";
+
+const photos = [photo1, photo2, photo3];
 
 const features = [
   {
@@ -27,7 +38,7 @@ const features = [
 const AProposSection = () => {
   return (
     <section id="apropos" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
         <div className="text-center mb-12">
           <h2 className="section-title text-foreground">À Propos du Club</h2>
           <p className="section-subtitle">
@@ -36,14 +47,26 @@ const AProposSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Image */}
+
+          {/* Slider Photos */}
           <div className="relative animate-fade-in">
-            <div className="absolute -inset-4 bg-primary/20 rounded-lg transform rotate-3" />
-            <img
-              src={karatekaImage}
-              alt="Karatéka IKB"
-              className="relative rounded-lg shadow-card w-full object-cover aspect-square"
-            />
+            <Swiper
+              modules={[Pagination, Navigation]}
+              pagination={{ clickable: true }}
+              navigation={true}
+         className="relative rounded-lg shadow-card md:max-w-md lg:max-w-lg max-w-xs  aspect-square"
+
+            >
+              {photos.map((src, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    src={src}
+                    alt={`Photo ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           {/* Content */}
@@ -53,20 +76,8 @@ const AProposSection = () => {
                 Notre Histoire
               </h3>
               <div className="text-muted-foreground leading-relaxed space-y-4">
-                <p>
-                  Fondé à Bagnolet en 2017 par <strong>Fares Guedjdal</strong>, ceinture noire <strong>5ᵉ dan</strong> en <strong>Karaté Shotokan</strong>, ancien <strong>champion de France</strong> dans plusieurs disciplines sous la <strong>FFK</strong>, <strong>champion international de karaté traditionnel </strong>  et multi‑champion en <strong>Karaté Full Contact</strong>, <strong>Light Contact</strong>, <strong>Krav Maga</strong> et <strong>Karaté Mix</strong>. Diplômé <strong>expert</strong>, il possède également une carrière de <strong>coaching de haut niveau</strong> en karaté et MMA.
-                </p>
-
-
-                <p>
-                  Le club <strong>IKB</strong> a pour objectif de transmettre les valeurs fondamentales des arts martiaux tout en proposant un enseignement moderne et adapté à chaque pratiquant.
-                </p>
-
-                <p>
-                  Notre mission est de former les jeunes afin qu’ils apprennent une discipline complète, développent leur technique, discipline et confiance, et puissent progresser jusqu’au plus haut niveau, que ce soit pour les passages de grade, la compétition ou la pratique loisir.
-                </p>
+                <p> Fondé à Bagnolet en 2017 par <strong>Fares Guedjdal</strong>, ceinture noire <strong>5ᵉ dan</strong> en <strong>Karaté Shotokan</strong>, ancien <strong>champion de France</strong> dans plusieurs disciplines sous la <strong>FFK</strong>, <strong>champion international de karaté traditionnel </strong> et multi‑champion en <strong>Karaté Full Contact</strong>, <strong>Light Contact</strong>, <strong>Krav Maga</strong> et <strong>Karaté Mix</strong>. Diplômé <strong>expert</strong>, il possède également une carrière de <strong>coaching de haut niveau en karaté et MMA </strong>. </p> <p> Le club <strong>IKB</strong> a pour objectif de transmettre les valeurs fondamentales des arts martiaux tout en proposant un enseignement moderne et adapté à chaque pratiquant. </p> <p> Notre mission est de former les jeunes afin qu’ils apprennent une discipline complète, développent leur technique, discipline et confiance, et puissent progresser jusqu’au plus haut niveau, que ce soit pour les passages de grade, la compétition ou la pratique loisir. </p>
               </div>
-
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -90,6 +101,7 @@ const AProposSection = () => {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>

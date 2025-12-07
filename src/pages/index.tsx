@@ -7,6 +7,7 @@ import TarifsSection from "@/components/TarifsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CompetitionSection from "@/components/CompetitionSection";
+import VideosSection from "@/components/VideosSection";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("accueil");
@@ -28,7 +29,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["accueil", "horaires", "apropos", "competition", "tarifs", "contact"];
+      const sections = ["accueil", "horaires", "apropos", "competition", "videos", "tarifs", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
@@ -55,6 +56,7 @@ const Index = () => {
         <HorairesSection />
         <AProposSection />
         <CompetitionSection />
+        <VideosSection />
         <TarifsSection onNavigate={scrollToSection} />
         <ContactSection />
       </main>

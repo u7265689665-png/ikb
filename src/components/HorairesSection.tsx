@@ -1,25 +1,42 @@
-import { Clock } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 
 const scheduleData = [
   {
     day: "Mardi",
     sessions: [
       { time: "17h45 - 18h30", group: "Baby Karate (4-6 ans)" },
-      { time: "18h30 - 19h00", group: "Karaté Enfants (7-13 ans)" },
-      { time: "19h30 - 21h00", group: "Boxe pied/poing & MMA" },
+      { time: "18h30 - 19h30", group: "MMA (7-13 ans)" },
+      { time: "19h30 - 21h30", group: "MMA (Ados-Adultes)" },
     ],
-    location: "Salle de sport de la piscine Les Malassis, Bagnolet",
+    locationName: "Piscine Les Malassis",
+    locationAddress: "36 Rue Pierre et Marie Curie, Bagnolet",
+    mapsUrl: "https://maps.google.com/?q=36+Rue+Pierre+et+Marie+Curie,+Bagnolet",
+  },
+  {
+    day: "Mercredi",
+    sessions: [
+      { time: "17h45 - 18h30", group: "Baby Karate (4-6 ans)" },
+      { time: "18h30 - 19h30", group: "Karaté enfants (7-13 ans)" },
+      { time: "19h30 - 21h30", group: "MMA (Ados-Adultes)" },
+    ],
+    locationName: "Salle Joliot Curie",
+    locationAddress: "78 Avenue de la Dhuys, Bagnolet",
+    mapsUrl: "https://maps.google.com/?q=78+Avenue+de+la+Dhuys,+Bagnolet",
   },
   {
     day: "Samedi",
     sessions: [
-      { time: "17h45 - 18h30", group: "Baby Karate (4-6 ans)" },
-      { time: "18h30 - 19h00", group: "Karaté Enfants (7-13 ans)" },
-      { time: "19h30 - 21h00", group: "Boxe pied/poing & MMA" },
+      { time: "14h - 14h45", group: "Baby Karate (4-6 ans)" },
+      { time: "14h45 - 15h45", group: "Karaté Enfants (7-13 ans)" },
+      { time: "15h45 - 17h", group: "Karaté Enfants (Avancés)" },
+      { time: "17h - 19h", group: "MMA (Ados-Adultes)" },
     ],
-    location: "Gymnase Eugénie Cotton, Bagnolet",
+    locationName: "Gymnase Eugénie Cotton",
+    locationAddress: "8 Rue Girardot, Bagnolet",
+    mapsUrl: "https://maps.google.com/?q=8+Rue+Girardot,+Bagnolet",
   },
 ];
+
 
 const HorairesSection = () => {
   return (
@@ -37,7 +54,7 @@ const HorairesSection = () => {
 
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {scheduleData.map((day, index) => (
             <div
               key={day.day}
@@ -60,11 +77,23 @@ const HorairesSection = () => {
                   </div>
                 ))}
               </div>
-              {day.location && (
-                <p className="text-sm text-center text-muted-foreground pb-4">
-                  📍 {day.location}
-                </p>
+              {day.locationName && (
+                <div className="text-sm text-center text-muted-foreground pb-4">
+                  <a
+                    href={day.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-center text-muted-foreground pb-4 flex items-center justify-center gap-2 hover:text-primary transition-colors"
+                  >
+                    <MapPin className="h-4 w-4 text-primary" />
+                    <span className="font-medium">{day.locationName}</span>
+                  </a>
+                  <p className="text-xs mt-1">{day.locationAddress}</p>
+
+
+                </div>
               )}
+
             </div>
           ))}
         </div>
